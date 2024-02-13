@@ -92,65 +92,88 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 10,
               ),
               Container(
+                padding: const EdgeInsets.fromLTRB(15, 10, 10, 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white38,
                 ),
-                child: ListTile(
-                  leading: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.blueGrey.shade800,
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(50, 5, 5, 0),
-                          child: Text(
-                            'VISA',
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 8,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(
+                        left: 1,
+                        right: 2,
+                      ),
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.blueGrey.shade800,
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Text(
+                              'VISA',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 8,
+                              ),
                             ),
                           ),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Icon(
+                              Icons.star_purple500_rounded,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Main card',
+                          style: TextStyle(
+                            color: Colors.blueGrey.shade800,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
                         ),
-                        Icon(
-                          Icons.star_purple500_rounded,
-                          color: Colors.white70,
+                        Text(
+                          'Activated',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueGrey.shade300,
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                  title: Text(
-                    'Main card',
-                    style: TextStyle(
-                      color: Colors.blueGrey.shade800,
-                      fontWeight: FontWeight.bold,
+                    const SizedBox(
+                      width: 250,
                     ),
-                  ),
-                  subtitle: Text(
-                    'Activated',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueGrey.shade600,
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MainCard(),
+                          ),
+                        );
+                      },
+                      icon: Icon(
+                        Icons.keyboard_arrow_right_outlined,
+                        color: Colors.blueGrey.shade600,
+                      ),
                     ),
-                  ),
-                  trailing: IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MainCard(),
-                        ),
-                      );
-                    },
-                    icon: Icon(
-                      Icons.keyboard_arrow_right_outlined,
-                      color: Colors.blueGrey.shade600,
-                    ),
-                  ),
+                  ],
                 ),
               ),
               const SizedBox(
@@ -167,55 +190,81 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 10,
               ),
               Container(
+                padding: const EdgeInsets.fromLTRB(15, 10, 10, 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white38,
                 ),
-                child: ListTile(
-                  leading: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.blueGrey.shade800,
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(50, 5, 5, 0),
-                          child: Text(
-                            'VISA',
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 8,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(
+                        left: 1,
+                        right: 2,
+                      ),
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.blueGrey.shade800,
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Text(
+                              'VISA',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 8,
+                              ),
                             ),
                           ),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Icon(
+                              Icons.star_purple500_rounded,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Basic card',
+                          style: TextStyle(
+                            color: Colors.blueGrey.shade800,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
                         ),
-                        Icon(
-                          Icons.star_purple500_rounded,
-                          color: Colors.white70,
+                        Text(
+                          'Activated',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueGrey.shade300,
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                  title: Text(
-                    'Basic card',
-                    style: TextStyle(
-                      color: Colors.blueGrey.shade800,
-                      fontWeight: FontWeight.bold,
+                    const SizedBox(
+                      width: 250,
                     ),
-                  ),
-                  subtitle: Text(
-                    'Activated',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueGrey.shade600,
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.keyboard_arrow_right_outlined,
+                        color: Colors.blueGrey.shade600,
+                      ),
                     ),
-                  ),
-                  trailing: Icon(
-                    Icons.keyboard_arrow_right_outlined,
-                    color: Colors.blueGrey.shade600,
-                  ),
+                  ],
                 ),
               ),
               const SizedBox(
@@ -232,110 +281,162 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 10,
               ),
               Container(
+                padding: const EdgeInsets.fromLTRB(15, 10, 10, 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white38,
                 ),
-                child: ListTile(
-                  leading: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.blueGrey.shade900,
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(50, 5, 5, 0),
-                          child: Text(
-                            'VISA',
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 8,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(
+                        left: 1,
+                        right: 2,
+                      ),
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.blueGrey.shade800,
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Text(
+                              'VISA',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 8,
+                              ),
                             ),
                           ),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Icon(
+                              Icons.star_purple500_rounded,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Basic card',
+                          style: TextStyle(
+                            color: Colors.blueGrey.shade800,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
                         ),
-                        Icon(
-                          Icons.star_purple500_rounded,
-                          color: Colors.white70,
+                        const Text(
+                          'Expired',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red,
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                  title: Text(
-                    'Basic card',
-                    style: TextStyle(
-                      color: Colors.blueGrey.shade800,
-                      fontWeight: FontWeight.bold,
+                    const SizedBox(
+                      width: 250,
                     ),
-                  ),
-                  subtitle: Text(
-                    'Expired',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red.shade300,
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.keyboard_arrow_right_outlined,
+                        color: Colors.blueGrey.shade600,
+                      ),
                     ),
-                  ),
-                  trailing: Icon(
-                    Icons.keyboard_arrow_right_outlined,
-                    color: Colors.blueGrey.shade600,
-                  ),
+                  ],
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
               Container(
+                padding: const EdgeInsets.fromLTRB(15, 10, 10, 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white38,
                 ),
-                child: ListTile(
-                  leading: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.lime.shade800,
-                    ),
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(50, 5, 5, 0),
-                          child: Text(
-                            'VISA',
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 8,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(
+                        left: 1,
+                        right: 2,
+                      ),
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.lime.shade800,
+                      ),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Text(
+                              'VISA',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 8,
+                              ),
                             ),
                           ),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Icon(
+                              Icons.star_purple500_rounded,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Credit card',
+                          style: TextStyle(
+                            color: Colors.blueGrey.shade800,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
                         ),
-                        Icon(
-                          Icons.star_purple500_rounded,
-                          color: Colors.white70,
+                        Text(
+                          'Not activated',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueGrey.shade300,
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                  title: Text(
-                    'Credit card',
-                    style: TextStyle(
-                      color: Colors.blueGrey.shade800,
-                      fontWeight: FontWeight.bold,
+                    const SizedBox(
+                      width: 235,
                     ),
-                  ),
-                  subtitle: Text(
-                    'Not activated',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueGrey.shade600,
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.keyboard_arrow_right_outlined,
+                        color: Colors.blueGrey.shade600,
+                      ),
                     ),
-                  ),
-                  trailing: Icon(
-                    Icons.keyboard_arrow_right_outlined,
-                    color: Colors.blueGrey.shade600,
-                  ),
+                  ],
                 ),
               ),
               const SizedBox(

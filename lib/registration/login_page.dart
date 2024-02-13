@@ -150,8 +150,10 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {},
-                icon: Icon(Icons.app_registration_outlined,
-                    color: Colors.blueGrey.shade800),
+                icon: Icon(
+                  Icons.app_registration_outlined,
+                  color: Colors.blueGrey.shade800,
+                ),
                 label: Center(
                   child: Text(
                     'Log in with Bank ID',
