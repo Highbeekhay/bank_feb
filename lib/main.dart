@@ -1,3 +1,4 @@
+import 'package:bank_feb/accounts/account_page.dart';
 import 'package:bank_feb/cards/first_page.dart';
 import 'package:bank_feb/cards/main_card.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +28,9 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.blueGrey.shade50,
         ),
         useMaterial3: true,
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          backgroundColor: Colors.white38,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: Colors.blueGrey.shade800,
+          unselectedItemColor: Colors.blueGrey.shade800,
         ),
       ),
       home: const MyHomePage(),
@@ -44,8 +46,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int currentPage = 0;
-
+  int myIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -353,15 +354,16 @@ class _MyHomePageState extends State<MyHomePage> {
           Icons.add,
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 1,
+        items: [
+          BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FirstPage(),
+                    builder: (context) => const AccountPage(),
                   ),
                 );
               },
@@ -371,7 +373,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             label: 'Accounts',
           ),
-          NavigationDestination(
+          BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
                 Navigator.push(
@@ -387,7 +389,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             label: 'Cards',
           ),
-          NavigationDestination(
+          BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
                 Navigator.push(
@@ -403,7 +405,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             label: 'Analytics',
           ),
-          NavigationDestination(
+          BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
                 Navigator.push(
@@ -420,13 +422,6 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Payments',
           ),
         ],
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPage = index;
-          });
-        },
-        selectedIndex: currentPage,
-        indicatorColor: Colors.transparent,
       ),
     );
   }

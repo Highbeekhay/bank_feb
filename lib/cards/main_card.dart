@@ -43,14 +43,14 @@ class MainCard extends StatelessWidget {
                   border: Border.all(
                     color: Colors.white12,
                   ),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Colors.lime,
                       Colors.black54,
                       Colors.lime,
                       Colors.black,
                     ],
-                    transform: const GradientRotation(2 / 4),
+                    transform: GradientRotation(2 / 4),
                     begin: AlignmentDirectional.topStart,
                     end: AlignmentDirectional.bottomEnd,
                     tileMode: TileMode.clamp,

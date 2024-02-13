@@ -1,9 +1,15 @@
+import 'package:bank_feb/accounts/account_page.dart';
 import 'package:bank_feb/cards/main_card.dart';
 import 'package:flutter/material.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
 
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -311,35 +317,74 @@ class FirstPage extends StatelessWidget {
           Icons.add,
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(
-              Icons.account_balance_outlined,
-              color: Colors.black,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 1,
+        items: [
+          BottomNavigationBarItem(
+            icon: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AccountPage(),
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.account_balance_outlined,
+              ),
             ),
             label: 'Accounts',
           ),
-          NavigationDestination(
-            icon: Icon(
-              Icons.credit_card_rounded,
+          BottomNavigationBarItem(
+            icon: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FirstPage(),
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.credit_card_rounded,
+              ),
             ),
             label: 'Cards',
           ),
-          NavigationDestination(
-            icon: Icon(
-              Icons.signal_cellular_alt,
+          BottomNavigationBarItem(
+            icon: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FirstPage(),
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.signal_cellular_alt,
+              ),
             ),
             label: 'Analytics',
           ),
-          NavigationDestination(
-            icon: Icon(
-              Icons.currency_exchange,
+          BottomNavigationBarItem(
+            icon: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FirstPage(),
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.currency_exchange,
+              ),
             ),
             label: 'Payments',
           ),
         ],
-        indicatorColor: Colors.transparent,
       ),
     );
   }
