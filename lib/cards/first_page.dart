@@ -1,5 +1,7 @@
 import 'package:bank_feb/accounts/account_page.dart';
+import 'package:bank_feb/analytics/analytics_page.dart';
 import 'package:bank_feb/cards/main_card.dart';
+import 'package:bank_feb/payments/payment_page.dart';
 import 'package:flutter/material.dart';
 
 class FirstPage extends StatefulWidget {
@@ -358,7 +360,7 @@ class _FirstPageState extends State<FirstPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FirstPage(),
+                    builder: (context) => const AnalyticsPage(),
                   ),
                 );
               },
@@ -374,7 +376,7 @@ class _FirstPageState extends State<FirstPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FirstPage(),
+                    builder: (context) => const PaymentPage(),
                   ),
                 );
               },

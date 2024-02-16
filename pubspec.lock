@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
+  dropdown_button2:
+    dependency: "direct main"
+    description:
+      name: dropdown_button2
+      sha256: b0fe8d49a030315e9eef6c7ac84ca964250155a6224d491c1365061bc974a9e1
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.9"
   fake_async:
     dependency: transitive
     description:
@@ -115,6 +123,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  pin_plus_keyboard:
+    dependency: "direct main"
+    description:
+      name: pin_plus_keyboard
+      sha256: ca71cad44f1f467f05458a32ae0ba1013c28db9310af2c51b568975c86827e4b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.6"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -186,3 +202,4 @@ packages:
     version: "0.1.4-beta"
 sdks:
   dart: ">=3.1.5 <4.0.0"
+  flutter: ">=3.0.0"

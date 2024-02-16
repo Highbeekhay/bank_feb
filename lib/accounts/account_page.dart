@@ -1,5 +1,8 @@
+import 'package:bank_feb/analytics/analytics_page.dart';
 import 'package:bank_feb/cards/first_page.dart';
+import 'package:bank_feb/payments/payment_page.dart';
 import 'package:bank_feb/registration/create_account.dart';
+
 import 'package:flutter/material.dart';
 
 class AccountPage extends StatefulWidget {
@@ -10,6 +13,8 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  bool customIcon = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +64,7 @@ class _AccountPageState extends State<AccountPage> {
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.white38,
                 ),
-                child: ListTile(
+                child: ExpansionTile(
                   title: Text(
                     '00, 00 kr',
                     style: TextStyle(
@@ -75,6 +80,136 @@ class _AccountPageState extends State<AccountPage> {
                       color: Colors.blueGrey.shade300,
                     ),
                   ),
+                  trailing: Icon(
+                    customIcon
+                        ? Icons.keyboard_arrow_down
+                        : Icons.keyboard_arrow_down_outlined,
+                    color: Colors.blueGrey.shade800,
+                  ),
+                  children: [
+                    ListTile(
+                      title: Text(
+                        '1677,31 zl',
+                        style: TextStyle(
+                          color: Colors.blueGrey.shade800,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                      subtitle: Text(
+                        '4396.91 kr',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueGrey.shade300,
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.rectangle_outlined,
+                        color: Colors.redAccent.shade700,
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(
+                        '69,31 nok',
+                        style: TextStyle(
+                          color: Colors.blueGrey.shade800,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                      subtitle: Text(
+                        '60.56 kr',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueGrey.shade300,
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.rectangle_outlined,
+                        color: Colors.blue.shade600,
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(
+                        '567,31 kr',
+                        style: TextStyle(
+                          color: Colors.blueGrey.shade800,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'main account',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueGrey.shade300,
+                        ),
+                      ),
+                      trailing: const Icon(
+                        Icons.rectangle_outlined,
+                        color: Colors.amber,
+                      ),
+                    ),
+                    Divider(
+                      indent: 20,
+                      endIndent: 0,
+                      thickness: 1,
+                      color: Colors.blueGrey.shade200,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton.icon(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll(
+                              Colors.blueGrey.shade50,
+                            ),
+                            side: MaterialStatePropertyAll(
+                              BorderSide(
+                                color: Colors.blueGrey.shade800,
+                                width: 1.5,
+                              ),
+                            ),
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CreateAccount(),
+                              ),
+                            );
+                          },
+                          icon: Icon(
+                            Icons.add,
+                            color: Colors.blueGrey.shade800,
+                          ),
+                          label: Center(
+                            child: Text(
+                              'add account',
+                              style: TextStyle(
+                                color: Colors.blueGrey.shade800,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                  onExpansionChanged: (bool expanded) {
+                    setState(() => customIcon = expanded);
+                  },
                 ),
               ),
               const SizedBox(
@@ -302,7 +437,7 @@ class _AccountPageState extends State<AccountPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FirstPage(),
+                    builder: (context) => const AnalyticsPage(),
                   ),
                 );
               },
@@ -318,7 +453,7 @@ class _AccountPageState extends State<AccountPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FirstPage(),
+                    builder: (context) => const PaymentPage(),
                   ),
                 );
               },

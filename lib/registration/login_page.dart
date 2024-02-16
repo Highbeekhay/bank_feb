@@ -1,3 +1,4 @@
+import 'package:bank_feb/registration/verification_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -26,7 +27,7 @@ class LoginPage extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Login',
+                'Log in',
                 style: TextStyle(
                   color: Colors.blueGrey.shade800,
                   fontWeight: FontWeight.bold,
@@ -120,7 +121,7 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
+                      builder: (context) => const VerificationPage(),
                     ),
                   );
                 },

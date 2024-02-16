@@ -1,6 +1,8 @@
 import 'package:bank_feb/accounts/account_page.dart';
+import 'package:bank_feb/analytics/analytics_page.dart';
 import 'package:bank_feb/cards/first_page.dart';
 import 'package:bank_feb/cards/main_card.dart';
+import 'package:bank_feb/payments/payment_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -496,7 +498,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FirstPage(),
+                    builder: (context) => const AnalyticsPage(),
                   ),
                 );
               },
@@ -512,7 +514,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FirstPage(),
+                    builder: (context) => const PaymentPage(),
                   ),
                 );
               },
